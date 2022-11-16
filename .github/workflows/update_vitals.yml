@@ -31,6 +31,9 @@ jobs:
       - name: Run a multi-line script
         run: |
           sed -i 's/vitals-testing/${{ github.event.repository.name }}/g' vitals.yaml
+          git config --global user.email "pradeep@pradeep.com"
+          git config --global user.name "Your Name"
+          git commit -am "Automated report"
 
       - name: commit and push
         uses: mikeal/publish-to-github-action@master
@@ -46,7 +49,4 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           
           
-           #         git config --global user.email "pradeep@pradeep.com"
-          #git config --global user.name "Your Name"
-          #git commit -am "Automated report"
-          #git push
+
