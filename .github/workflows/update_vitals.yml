@@ -3,7 +3,7 @@
 name: UpdateVitals
 
 # Controls when the workflow will run
-on: pull_request
+on: [pull_request, push]
 
   # Allows you to run this workflow manually from the Actions tab
   #   workflow_dispatch:
@@ -35,7 +35,10 @@ jobs:
           git config --global user.name "Your Name"
           git commit -am "Automated report"
           git push
-
+      - name: commit and push
+        uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 # Runs a single command using the runners shell                
       - name: Disable this workflow
         shell: bash
