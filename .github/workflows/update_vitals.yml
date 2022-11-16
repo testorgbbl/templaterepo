@@ -36,6 +36,7 @@ jobs:
         uses: mikeal/publish-to-github-action@master
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          BRANCH_NAME: 'main'
 # Runs a single command using the runners shell                
       - name: Disable this workflow
         shell: bash
