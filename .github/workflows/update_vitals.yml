@@ -34,11 +34,13 @@ jobs:
           git config --global user.email "pradeep@pradeep.com"
           git config --global user.name "Your Name"
           git commit -am "Automated report"
-
-      - name: commit and push
-        uses: ad-m/github-push-action@master
+          git push 
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+#       - name: commit and push
+#         uses: ad-m/github-push-action@master
+#         env:
+#           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       #    BRANCH_NAME: 'main'
 # Runs a single command using the runners shell                
       - name: Disable this workflow
